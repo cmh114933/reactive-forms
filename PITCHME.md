@@ -18,6 +18,7 @@
 ```js
     // app.module.ts
     import { ReactiveFormsModule } from '@angular/forms';
+
     @NgModule({
         imports: [
             // other imports ...
@@ -32,6 +33,7 @@
 ```js
     // app.component.ts
     import { FormControl } from '@angular/forms';
+
     @Component({
         // component config
     })
@@ -59,21 +61,33 @@
     ```js
         fieldName.setValue('Test')
     ```
-- Adding validation
-    ```js
-        fieldName = new FormControl('defaultData', [Validators.required])
-    ```
-- Access form input status
-    ```js
-        fieldName.status => string
-        fieldName.invalid => boolean
-        fieldName.dirty => boolean
-        fieldName.touched => boolean
-    ```
-- Get errors
-    ```js
-        fieldName.errors
-    ```
+
++++
+
+### Setting up field validations
+```js
+    fieldName = new FormControl(
+        'defaultData', 
+        [Validators.required]
+    )
+```
+
++++
+
+### Getting form field errors
+```js
+    fieldName.errors
+```
+
++++ 
+
+### Retrieving Form Status
+```js
+    fieldName.status => string
+    fieldName.invalid => boolean
+    fieldName.dirty => boolean
+    fieldName.touched => boolean
+```
 
 ---
 
@@ -86,6 +100,7 @@
 ```js
     // app.module.ts
     import { ReactiveFormsModule } from '@angular/forms';
+
     @NgModule({
         imports: [
             // other imports ...
@@ -100,6 +115,7 @@
 ```js
     // app.component.ts
     import { FormControl, FormGroup } from '@angular/forms';
+    
     @Component({
         // component config
     })
